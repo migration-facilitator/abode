@@ -11,7 +11,8 @@ const Comparison = db.define('comparison', {
     allowNull: false
   },
   radius: {
-    type: Sequelize.INTEGER
+    type: Sequelize.INTEGER,
+    defaultValue: 5,
   },
   educationWeight: {
     type: Sequelize.INTEGER
