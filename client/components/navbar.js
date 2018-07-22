@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
@@ -14,29 +14,12 @@ const Wrapper = styled.div`
   background-color: #000b43;
   padding: 5px 5px 0 5px;
 `
-const Title = styled.a`
-  padding-left: 10px;
-  color: white;
-  font-size: 2em;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  white-space: nowrap;
-`
 
 const Nav = styled.div`
   display: flex;
   position: relative;
   justify-content: space-between;
   width: 100%;
-`
-
-const NavItem = styled.a`
-  display: inline-block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
 `
 const NavRight = styled.div`
   display: flex;
@@ -45,34 +28,51 @@ const NavRight = styled.div`
 
 const NavLeft = styled.div`
   display:flex
+
+`
+const Thumbnail = styled.img`
+  display: flex;
+  max-width: 15%;
+  max-height: 100%;
 `
 
-
-class NavBar extends Component {
+class Navbar extends Component {
   state = {}
   render() {
-    <Wrapper>
-      <Title>
-        <Nav>
-          <NavItem>
+    console.log("what is this window object", window)
 
-          </NavItem>
+    return (
+      <Wrapper>
+        <Nav>
+          <NavLeft>
+            <NavLink to='/'>
+              <Thumbnail src='https://comps.canstockphoto.com/sextant-illustration_csp36700221.jpg'></Thumbnail>
+            </NavLink>
+            <NavLink to='/dashboard'>Dashboard</NavLink>
+            <NavLink to='/map'>Map</NavLink>
+            <NavLink to='/comparisons'>Comparisons</NavLink>
+          </NavLeft>
+          <NavRight>
+            <NavLink to='login'>Login</NavLink>
+          </NavRight>
+
         </Nav>
-    </Wrapper>
-      }
-    }
+      </Wrapper>
+    )
+  }
+}
 
 const mapState = (state) => {
   return (
     {}
-      )
-    }
+  )
+}
 
 const mapDispatch = (dispatch) => {
   return (
     {}
-      )
-    }
+  )
+}
 
 
-export default connect(mapState, mapDispatch)(NavBar)
+export default connect(mapState, mapDispatch)(Navbar)
