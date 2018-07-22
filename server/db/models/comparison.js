@@ -15,13 +15,16 @@ const Comparison = db.define('comparison', {
     defaultValue: 5,
   },
   educationWeight: {
-    type: Sequelize.INTEGER
+    type: Sequelize.INTEGER,
+    defaultValue: 1,
   },
   transitWeight: {
-    type: Sequelize.INTEGER
+    type: Sequelize.INTEGER,
+    defaultValue: 1,
   },
   costOfLivingWeight: {
-    type: Sequelize.INTEGER
+    type: Sequelize.INTEGER,
+    defaultValue: 1,
   },
 })
 
