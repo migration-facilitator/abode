@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
@@ -39,21 +39,19 @@ const Thumbnail = styled.img`
 class Navbar extends Component {
   state = {}
   render() {
-    console.log("what is this window object", window)
-
     return (
       <Wrapper>
         <Nav>
           <NavLeft>
-            <NavLink to='/'>
+            <Link to='/'>
               <Thumbnail src='https://comps.canstockphoto.com/sextant-illustration_csp36700221.jpg'></Thumbnail>
-            </NavLink>
-            <NavLink to='/dashboard'>Dashboard</NavLink>
-            <NavLink to='/map'>Map</NavLink>
-            <NavLink to='/comparisons'>Comparisons</NavLink>
+            </Link>
+            <Link to='/dashboard'>Dashboard</Link>
+            <Link to='/map'>Map</Link>
+            <Link to='/comparisons'>Comparisons</Link>
           </NavLeft>
           <NavRight>
-            <NavLink to='login'>Login</NavLink>
+            <Link to='login'>Login</Link>
           </NavRight>
 
         </Nav>
