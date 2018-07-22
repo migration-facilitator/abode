@@ -4,19 +4,18 @@ const CostOfLiving = require('./cost-of-living')
 const Transit = require('./transit')
 const Education = require('./education')
 
-/**
- * If we had any associations to make, this would be a great place to put them!
- * ex. if we had another model called BlogPost, we might say:
- *
- *    BlogPost.belongsTo(User)
- */
+Comparison.belongsTo(User)
+User.hasMany(Comparison)
 
-/**
- * We'll export all of our models here, so that any time a module needs a model,
- * we can just require it from 'db/models'
- * for example, we can say: const {User} = require('../db/models')
- * instead of: const User = require('../db/models/user')
- */
+CostOfLiving.belongsTo(Comparison)
+Comparison.hasOne(CostOfLiving)
+
+Transit.belongsTo(Comparison)
+Comparison.hasOne(Transit)
+
+Education.belongsTo(Comparison)
+Comparison.hasOne(Education)
+
 module.exports = {
   User,
   Comparison,
