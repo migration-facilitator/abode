@@ -28,7 +28,6 @@ class Dashboard extends Component {
     console.log("getting to dashboard")
     return (
       <Wrapper>
-
         {/* comparison cards will be mapped through and displayed on left */}
         <ComparisonCard />
         {/* data viz goes in StatSpace; might want to make this card a child of Comparison space */}

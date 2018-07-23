@@ -23,10 +23,8 @@ class MapView extends Component {
     }
   }
   render() {
-    console.log("getting to mapview")
     return (
       <Wrapper>
-
         {/*Google maps ish goes here*/}
         <SliderSpace />
         <NeightborhoodSpace />

@@ -23,10 +23,8 @@ class Comparisons extends Component {
     }
   }
   render() {
-    console.log("getting in to comparisons")
     return (
       <Wrapper>
-
         {/* map through saved comparisons */}
         <SavedComparisons />
       </Wrapper>
