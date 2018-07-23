@@ -20,7 +20,7 @@ const Transit = db.define('transit', {
   timeRHPublicTransit: {
     type: Sequelize.INTEGER
   },
-  costCar: {
+  gasPrice: {
     type: Sequelize.INTEGER
   },
   costRideshare: {
