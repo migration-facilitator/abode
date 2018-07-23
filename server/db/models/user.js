@@ -33,6 +33,15 @@ const User = db.define('user', {
   address: {
     type: Sequelize.STRING
   },
+  city: {
+    type: Sequelize.STRING
+  },
+  state: {
+    type: Sequelize.STRING
+  },
+  zipcode: {
+    type: Sequelize.INTEGER
+  },
   salary: {
     type: Sequelize.INTEGER
   }
