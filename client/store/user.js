@@ -6,7 +6,7 @@ import history from '../history'
  */
 const GET_USER = 'GET_USER'
 const REMOVE_USER = 'REMOVE_USER'
-
+const SET_USER_SETTINGS = 'SET_USER_SETTINGS'
 /**
  * INITIAL STATE
  */
@@ -15,9 +15,9 @@ const defaultUser = {}
 /**
  * ACTION CREATORS
  */
-const getUser = user => ({type: GET_USER, user})
-const removeUser = () => ({type: REMOVE_USER})
-
+const getUser = user => ({ type: GET_USER, user })
+const removeUser = () => ({ type: REMOVE_USER })
+const setUserSettings = () => ({ type: SET_USER_SETTINGS })
 /**
  * THUNK CREATORS
  */
@@ -33,9 +33,9 @@ export const me = () => async dispatch => {
 export const auth = (email, password, method) => async dispatch => {
   let res
   try {
-    res = await axios.post(`/auth/${method}`, {email, password})
+    res = await axios.post(`/auth/${method}`, { email, password })
   } catch (authError) {
-    return dispatch(getUser({error: authError}))
+    return dispatch(getUser({ error: authError }))
   }
 
   try {
@@ -56,10 +56,19 @@ export const logout = () => async dispatch => {
   }
 }
 
+export const setUserSettingThunk = async (userSettings) => {
+  try {
+    await axios.post('')
+  } catch (err) {
+    console.error(err)
+  }
+
+}
+
 /**
  * REDUCER
  */
-export default function(state = defaultUser, action) {
+export default function (state = defaultUser, action) {
   switch (action.type) {
     case GET_USER:
       return action.user

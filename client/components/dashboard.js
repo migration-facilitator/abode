@@ -29,11 +29,11 @@ class Dashboard extends Component {
     return (
       <Wrapper>
         {/* comparison cards will be mapped through and displayed on left */}
-        <ComparisonCard />
+        {/* <ComparisonCard /> */}
         {/* data viz goes in StatSpace; might want to make this card a child of Comparison space */}
-        <StatSpace />
+        {/* <StatSpace /> */}
         {/* ComparisonSpace is where our table is */}
-        <ComparisonSpace cardsToCompare={this.state.cardsToCompare} />
+        {/* <ComparisonSpace cardsToCompare={this.state.cardsToCompare} /> */}
       </Wrapper>
 
     )
