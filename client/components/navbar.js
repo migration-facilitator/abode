@@ -4,15 +4,15 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import { colors } from '../color-palette';
 
 const Wrapper = styled.div`
   position: relative;
   display: flex;
-  background-color: #333;
-  width: 100%;
+  background-color: ${colors.dark};
+  // width: 100%;
   height: 4em;
-  background-color: #000b43;
-  padding: 5px 5px 0 5px;
+  padding: 5px;
 `
 
 const Nav = styled.div`
@@ -32,7 +32,6 @@ const NavLeft = styled.div`
 `
 const Thumbnail = styled.img`
   display: flex;
-  max-width: 15%;
   max-height: 100%;
 `
 
@@ -44,7 +43,7 @@ class Navbar extends Component {
         <Nav>
           <NavLeft>
             <Link to='/'>
-              <Thumbnail src='https://comps.canstockphoto.com/sextant-illustration_csp36700221.jpg'></Thumbnail>
+              <Thumbnail src='https://comps.canstockphoto.com/sextant-illustration_csp36700221.jpg' />
             </Link>
             <Link to='/dashboard'>Dashboard</Link>
             <Link to='/map'>Map</Link>
