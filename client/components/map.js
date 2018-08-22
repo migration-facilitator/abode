@@ -10,20 +10,38 @@ const mapFrame = styled.div`
 `
 
 export class MapContainer extends Component {
+  state = {
+    showingInfoWindow: false,
+    activeMarker: {},
+    selectedPlace: {},
+  };
+
+  onMarkerClick = (props, marker, e) =>
+    this.setState({
+      selectedPlace: props,
+      activeMarker: marker,
+      showingInfoWindow: true
+    });
+
+  onMapClicked = (props) => {
+    if (this.state.showingInfoWindow) {
+      this.setState({
+        showingInfoWindow: false,
+        activeMarker: null
+      })
+    }
+  };
+
   render() {
     return (
-      <Map
-        google={this.props.google}
-        style={style}
-        initialCenter={{
-          lat: 40.854885,
-          lng: -88.081807
-        }}
-        zoom={15}
-        onClick={this.onMapClicked}
-      >
-        <Marker onClick={this.onMarkerClick} name="Current location" />
-        <InfoWindow onClose={this.onInfoWindowClose}>
+      <Map google={this.props.google}
+        onClick={this.onMapClicked}>
+        <Marker onClick={this.onMarkerClick}
+          name="Current location" />
+
+        <InfoWindow
+          marker={this.state.activeMarker}
+          visible={this.state.showingInfoWindow}>
           <div>
             <h1>{this.state.selectedPlace.name}</h1>
           </div>
@@ -33,4 +51,4 @@ export class MapContainer extends Component {
   }
 }
 
-export default GoogleApiWrapper({ apiKey: 'AIzaSyB1UpSMX02wiPvoY1WxQi2-jaxCHqxMz_Y' })(MapContainer)
+export default GoogleApiWrapper({ apiKey: 'AIzaSyCR8D8tfRpfoBIHSw_kW00LUHcRdWEfmsU' })(MapContainer)
