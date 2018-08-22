@@ -3,6 +3,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
+import { Map } from '.'
 
 const Wrapper = styled.div`
   position: relative;
@@ -25,9 +26,9 @@ class MapView extends Component {
   render() {
     return (
       <Wrapper>
-        {/*Google maps ish goes here*/}
-        <SliderSpace />
-        <NeightborhoodSpace />
+        <Map />
+        {/* <SliderSpace /> */}
+        {/* <NeightborhoodSpace /> */}
       </Wrapper>
 
     )
