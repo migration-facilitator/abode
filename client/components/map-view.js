@@ -7,9 +7,6 @@ import { Map } from '.'
 
 const Wrapper = styled.div`
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   width: 80%;
   max-width: 80em;
   height: 100vh;
